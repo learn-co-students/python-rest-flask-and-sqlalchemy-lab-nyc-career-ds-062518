@@ -26,7 +26,8 @@ class AppTestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         raw = response.data.decode("utf-8")
         json_data = json.loads(raw)
-        user = {'id': 1, 'tweets': [{'id': 1, 'text': 'Data Science is awesome', 'user': 'Jeff', 'user_id': 1}, {'id': 2, 'text': 'Python is pretty neat', 'user': 'Jeff', 'user_id': 1}, {'id': 3, 'text': "Wishing I was chillin' in mexico rn", 'user': 'Jeff', 'user_id': 1}], 'username': 'Jeff'}
+        user = {'id': 1, 'tweets': [{'id': 1, 'text': 'Data Science is awesome', 'user': 'Jeff', 'user_id': 1}, {'id': 2, 'text': 'Python is pretty neat', 'user': 'Jeff', 'user_id': 1},
+        {'id': 3, 'text': "Wishing I was chillin' in mexico rn", 'user': 'Jeff', 'user_id': 1}], 'username': 'Jeff'}
         self.assertEqual(json_data, user)
 
     def test_users_by_name(self):
