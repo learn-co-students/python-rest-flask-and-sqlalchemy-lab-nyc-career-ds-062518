@@ -26,7 +26,8 @@ class AppTestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         raw = response.data.decode("utf-8")
         json_data = json.loads(raw)
-        user = {'id': 1, 'tweets': [{'id': 1, 'text': 'Data Science is awesome', 'user': 'Jeff', 'user_id': 1}, {'id': 2, 'text': 'Python is pretty neat', 'user': 'Jeff', 'user_id': 1}, {'id': 3, 'text': "Wishing I was chillin' in mexico rn", 'user': 'Jeff', 'user_id': 1}], 'username': 'Jeff'}
+        user = {'id': 1, 'tweets': [{'id': 1, 'text': 'Data Science is awesome', 'user': 'Jeff', 'user_id': 1}, {'id': 2, 'text': 'Python is pretty neat', 'user': 'Jeff', 'user_id': 1},
+        {'id': 3, 'text': "Wishing I was chillin' in mexico rn", 'user': 'Jeff', 'user_id': 1}], 'username': 'Jeff'}
         self.assertEqual(json_data, user)
 
     def test_users_by_name(self):
@@ -34,7 +35,8 @@ class AppTestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         raw = response.data.decode("utf-8")
         json_data = json.loads(raw)
-        user = {'id': 1, 'tweets': [{'id': 1, 'text': 'Data Science is awesome', 'user': 'Jeff', 'user_id': 1}, {'id': 2, 'text': 'Python is pretty neat', 'user': 'Jeff', 'user_id': 1}, {'id': 3, 'text': "Wishing I was chillin' in mexico rn", 'user': 'Jeff', 'user_id': 1}], 'username': 'Jeff'}
+        user = {'id': 1, 'tweets': [{'id': 1, 'text': 'Data Science is awesome', 'user': 'Jeff', 'user_id': 1}, {'id': 2, 'text': 'Python is pretty neat', 'user': 'Jeff', 'user_id': 1},
+         {'id': 3, 'text': "Wishing I was chillin' in mexico rn", 'user': 'Jeff', 'user_id': 1}], 'username': 'Jeff'}
         self.assertEqual(json_data, user)
 
     def test_tweets_index(self):
@@ -42,7 +44,8 @@ class AppTestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         raw = response.data.decode("utf-8")
         json_data = json.loads(raw)
-        tweets = [{'id': 1, 'text': 'Data Science is awesome', 'user': 'Jeff', 'user_id': 1}, {'id': 2, 'text': 'Python is pretty neat', 'user': 'Jeff', 'user_id': 1}, {'id': 3, 'text': "Wishing I was chillin' in mexico rn", 'user': 'Jeff', 'user_id': 1}, {'id': 4, 'text': 'RPDR is the best show', 'user': 'Rachel', 'user_id': 2}, {'id': 5, 'text': 'I just made the coolest NPM package!', 'user': 'Rachel', 'user_id': 2}, {'id': 6, 'text': 'Running is so fun!', 'user': 'Rachel', 'user_id': 2}, {'id': 7, 'text': 'I love hogs', 'user': 'Daniel', 'user_id': 3}, {'id': 8, 'text': 'Hogs are the best way to teach react', 'user': 'Daniel', 'user_id': 3}, {'id': 9, 'text': 'Programming is lyfe', 'user': 'Daniel', 'user_id': 3}]
+        tweets = [{'id': 1, 'text': 'Data Science is awesome', 'user': 'Jeff', 'user_id': 1}, {'id': 2, 'text': 'Python is pretty neat', 'user': 'Jeff', 'user_id': 1}, {'id': 3, 'text': "Wishing I was chillin' in mexico rn"
+        , 'user': 'Jeff', 'user_id': 1}, {'id': 4, 'text': 'RPDR is the best show', 'user': 'Rachel', 'user_id': 2}, {'id': 5, 'text': 'I just made the coolest NPM package!', 'user': 'Rachel', 'user_id': 2}, {'id': 6, 'text': 'Running is so fun!', 'user': 'Rachel', 'user_id': 2}, {'id': 7, 'text': 'I love hogs', 'user': 'Daniel', 'user_id': 3}, {'id': 8, 'text': 'Hogs are the best way to teach react', 'user': 'Daniel', 'user_id': 3}, {'id': 9, 'text': 'Programming is lyfe', 'user': 'Daniel', 'user_id': 3}]
         self.assertEqual(json_data, tweets)
 
     def test_tweet_by_id(self):
@@ -58,7 +61,8 @@ class AppTestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         raw = response.data.decode("utf-8")
         json_data = json.loads(raw)
-        user1_tweets = {'id': 1, 'tweets': [{'id': 1, 'text': 'Data Science is awesome', 'user': 'Jeff', 'user_id': 1}, {'id': 2, 'text': 'Python is pretty neat', 'user': 'Jeff', 'user_id': 1}, {'id': 3, 'text': "Wishing I was chillin' in mexico rn", 'user': 'Jeff', 'user_id': 1}], 'username': 'Jeff'}
+        user1_tweets = {'id': 1, 'tweets': [{'id': 1, 'text': 'Data Science is awesome', 'user': 'Jeff', 'user_id': 1}, {'id': 2, 'text': 'Python is pretty neat', 'user': 'Jeff', 'user_id': 1}, {'id': 3,
+        'text': "Wishing I was chillin' in mexico rn", 'user': 'Jeff', 'user_id': 1}], 'username': 'Jeff'}
         self.assertEqual(json_data, user1_tweets)
 
     def test_users_name_tweets(self):
@@ -66,7 +70,8 @@ class AppTestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         raw = response.data.decode("utf-8")
         json_data = json.loads(raw)
-        user1_tweets = [{'id': 1, 'text': 'Data Science is awesome', 'user': 'Jeff', 'user_id': 1}, {'id': 2, 'text': 'Python is pretty neat', 'user': 'Jeff', 'user_id': 1}, {'id': 3, 'text': "Wishing I was chillin' in mexico rn", 'user': 'Jeff', 'user_id': 1}]
+        user1_tweets = [{'id': 1, 'text': 'Data Science is awesome', 'user': 'Jeff', 'user_id': 1}, {'id': 2, 'text': 'Python is pretty neat', 'user': 'Jeff', 'user_id': 1}, {'id': 3, 'text': "Wishing I was chillin' in mexico rn",
+        'user': 'Jeff', 'user_id': 1}]
         self.assertEqual(json_data, user1_tweets)
 
     def test_tweets_by_id_user(self):
@@ -74,7 +79,8 @@ class AppTestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         raw = response.data.decode("utf-8")
         json_data = json.loads(raw)
-        user = {'id': 1, 'tweets': [{'id': 1, 'text': 'Data Science is awesome', 'user': 'Jeff', 'user_id': 1}, {'id': 2, 'text': 'Python is pretty neat', 'user': 'Jeff', 'user_id': 1}, {'id': 3, 'text': "Wishing I was chillin' in mexico rn", 'user': 'Jeff', 'user_id': 1}], 'username': 'Jeff'}
+        user = {'id': 1, 'tweets': [{'id': 1, 'text': 'Data Science is awesome', 'user': 'Jeff', 'user_id': 1}, {'id': 2, 'text': 'Python is pretty neat', 'user': 'Jeff', 'user_id': 1},
+         {'id': 3, 'text': "Wishing I was chillin' in mexico rn", 'user': 'Jeff', 'user_id': 1}], 'username': 'Jeff'}
         self.assertEqual(json_data, user)
 
 
